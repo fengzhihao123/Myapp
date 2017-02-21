@@ -8,12 +8,14 @@
 
 import UIKit
 import Alamofire
-
+import Moya
+import SwiftyJSON
 class LoginViewController: UIViewController {
 
     let accountTextfield = UITextField()
     let passwordTextfield = UITextField()
     let segueToRegisterButton = UIButton()
+    let loginButton = UIButton()
     let registerVC = RegisterViewController()
     
     
@@ -42,19 +44,36 @@ class LoginViewController: UIViewController {
         passwordTextfield.textColor = UIColor.white
         view.addSubview(passwordTextfield)
         
-        segueToRegisterButton.frame = CGRect(x: 100, y: 280, width: 100, height: 50)
-        segueToRegisterButton.setTitle("ToRegisterVC", for: .normal)
-        segueToRegisterButton.addTarget(self, action: #selector(buttonDidTouch), for: .touchUpInside)
+        loginButton.frame = CGRect(x: 100, y: 280, width: 100, height: 50)
+        loginButton.setTitle("login", for: .normal)
+        loginButton.addTarget(self, action: #selector(loginButtonDidTouch), for: .touchUpInside)
+        loginButton.backgroundColor = UIColor.black
+        view.addSubview(loginButton)
+        
+        segueToRegisterButton.frame = CGRect(x: 280, y: 280, width: 100, height: 50)
+        segueToRegisterButton.setTitle("to register", for: .normal)
+        segueToRegisterButton.addTarget(self, action: #selector(segueButtonDidTouch), for: .touchUpInside)
         segueToRegisterButton.backgroundColor = UIColor.black
         view.addSubview(segueToRegisterButton)
     }
-    //MARK:event
-    func buttonDidTouch() -> Void {
-        navigationController?.pushViewController(registerVC, animated: true)
-//        callLoginAPI()
+    
+    func setupAlert(message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "sure", style: .default, handler: nil)
+        alert.addAction(alertAction)
+        present(alert, animated: true, completion: nil)
     }
     
-    func callLoginAPI() -> Void {
+    //MARK:event
+    func loginButtonDidTouch() {
+        callLoginAPI()
+    }
+    
+    func segueButtonDidTouch()  {
+        navigationController?.pushViewController(registerVC, animated: true)
+    }
+    
+    func callLoginAPI() {
         guard (accountTextfield.text?.characters.count)! > 0 else {
             print("account is nil")
             return
@@ -64,17 +83,25 @@ class LoginViewController: UIViewController {
             return
         }
         
-        let parameters: [String:Any] = ["usertel":accountTextfield.text!,
-                                        "Password":passwordTextfield.text!]
-        
-        Alamofire.request("http://127.0.0.1:8080/v1/login", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseData { (response) in
-            print("Request: \(response.request)")
-            print("Response: \(response.response)")
-            print("result: \(response.result)")
+        let provider = MoyaProvider<LoginAPI>()
+        provider.request(.login(userTel: accountTextfield.text!, userPassword: passwordTextfield.text!)) { result in
+            switch result {
+            case let .success(moyaResponse):
+                let json = JSON(data: moyaResponse.data)
+                
+                if let token = json["token"].string {
+                    UserDefaults.standard.set(token, forKey: "UserToken")
+                    chooseRootVC()
+                }
             
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)")
+                if let error = json["error"].string {
+                    self.setupAlert(message: error)
+                }
+            case let .failure(error):
+                print(error)
             }
         }
     }
+    
+    
 }

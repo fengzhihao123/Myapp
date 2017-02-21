@@ -8,13 +8,14 @@
 
 import UIKit
 import Alamofire
+import Moya
+import SwiftyJSON
 
 class RegisterViewController: UIViewController {
 
     let accountTextfield = UITextField()
     let passwordTextfield = UITextField()
     let segueToLoginButton = UIButton()
-    let messageLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,21 +44,22 @@ class RegisterViewController: UIViewController {
         segueToLoginButton.accessibilityIdentifier = "segue"
         view.addSubview(segueToLoginButton)
         
-        messageLabel.frame = CGRect(x: 100, y: 350, width: 100, height: 50)
-        messageLabel.backgroundColor = UIColor.red
-        messageLabel.accessibilityIdentifier = "messageLabel"
-        view.addSubview(messageLabel)
+    }
+    
+    func setupAlert(message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "sure", style: .default, handler: nil)
+        alert.addAction(alertAction)
+        present(alert, animated: true, completion: nil)
     }
     
     //MARK:event
-    func buttonDidTouch() -> Void {
+    func buttonDidTouch() {
         callRegisterUserAPI()
-        chooseRootVC()
     }
     
     //MARK:Network Layer
     func callRegisterUserAPI() -> Void {
-        
         guard (accountTextfield.text?.characters.count)! > 0 else {
             print("account is nil")
             return
@@ -67,18 +69,23 @@ class RegisterViewController: UIViewController {
             return
         }
         
-        let parameters: [String:Any] = ["key":accountTextfield.text!,
-                                        "value":passwordTextfield.text!]
-        
-        Alamofire.request("http://127.0.0.1:8080/post", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseData { (response) in
-            print("Request: \(response.request)")
-            print("Response: \(response.response)")
-            print("result: \(response.result)")
-            
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)")
+        let provider = MoyaProvider<LoginAPI>()
+        provider.request(.register(userTel: accountTextfield.text!, userPassword: passwordTextfield.text!)) { result in
+            switch result {
+            case let .success(moyaResponse):
+                let json = JSON(data: moyaResponse.data)
+                
+                if let token = json["token"].string {
+                    UserDefaults.standard.set(token, forKey: "UserToken")
+                    chooseRootVC()
+                }
+                
+                if let error = json["error"].string {
+                    self.setupAlert(message: error)
+                }
+            case let .failure(error):
+                print(error)
             }
         }
-        
     }
 }

@@ -63,4 +63,11 @@ class AboutMeRootViewController: UIViewController,UITableViewDelegate,UITableVie
             return tableViewCell
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 5 {
+            UserDefaults.standard.removeObject(forKey: "UserToken")
+            chooseRootVC()
+        }
+    }
 }

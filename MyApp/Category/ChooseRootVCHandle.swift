@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-let tabbarControl = UITabBarController()
+
 let navigationControl = UINavigationController()
 let rootVC = ViewController()
 let aboutmeVC = AboutMeRootViewController()
@@ -19,6 +19,7 @@ let loginVC = LoginViewController()
 func chooseRootVC() {
     let application = UIApplication.shared.delegate as! AppDelegate
     if UserDefaults.standard.string(forKey: "UserToken") != nil {
+        let tabbarControl = UITabBarController()
         let aboutmeNavi = UINavigationController(rootViewController: aboutmeVC)
         aboutmeNavi.tabBarItem.title = "我的"
         navigationControl.addChildViewController(rootVC)
