@@ -12,38 +12,53 @@ import Moya
 import SwiftyJSON
 
 class RegisterViewController: UIViewController {
-
-    let accountTextfield = UITextField()
-    let passwordTextfield = UITextField()
-    let segueToLoginButton = UIButton()
+    var accountTextfield = LoginTextField()
+    var passwordTextfield = LoginTextField()
+    var segueToLoginButton = UIButton()
+    var registerButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "register"
-        navigationController?.navigationBar.accessibilityIdentifier = "Menu"
-        view.backgroundColor = UIColor.white
+        setupAttribute()
         setupUI()
     }
     
+    //MARK:Attribute
+    func setupAttribute() {
+        view.backgroundColor = UIColor.white
+    }
+    
     //MARK:UI
-    func setupUI() -> Void {
-        accountTextfield.frame = CGRect(x: 100, y: 100, width: 300, height: 50)
-        accountTextfield.textColor = UIColor.white
-        accountTextfield.backgroundColor = UIColor.black
+    func setupUI() {
+        accountTextfield = LoginTextField().then({ (textField) in
+            textField.frame = CGRect(x: 0, y: 0, width: 300, height: 50)
+            textField.center = CGPoint(x: SCREEN_WIDTH/2, y: 150)
+        })
         view.addSubview(accountTextfield)
         
-        passwordTextfield.frame = CGRect(x: 100, y: 200, width: 300, height: 50)
-        passwordTextfield.textColor = UIColor.white
-        passwordTextfield.backgroundColor = UIColor.black
+        passwordTextfield = LoginTextField().then({ (textField) in
+            textField.frame = CGRect(x: 0, y: 0, width: 300, height: 50)
+            textField.center = CGPoint(x: SCREEN_WIDTH/2, y: 230)
+        })
         view.addSubview(passwordTextfield)
         
-        segueToLoginButton.frame = CGRect(x: 100, y: 280, width: 100, height: 50)
-        segueToLoginButton.setTitle("ToRegisterVC", for: .normal)
-        segueToLoginButton.addTarget(self, action: #selector(buttonDidTouch), for: .touchUpInside)
-        segueToLoginButton.backgroundColor = UIColor.black
-        segueToLoginButton.accessibilityIdentifier = "segue"
-        view.addSubview(segueToLoginButton)
+        registerButton = UIButton().then({ (button) in
+            button.frame = CGRect(x: 0, y: 0, width: 100, height: 50)
+            button.center = CGPoint(x: SCREEN_WIDTH/4, y: 300)
+            button.setTitle("注册", for: .normal)
+            button.setTitleColor(UIColor.black, for: .normal)
+            button.addTarget(self, action: #selector(registerButtonDidTouch), for: .touchUpInside)
+        })
+        view.addSubview(registerButton)
         
+        segueToLoginButton = UIButton().then({ (button) in
+            button.frame = CGRect(x: 0, y: 0, width: 100, height: 50)
+            button.center = CGPoint(x: SCREEN_WIDTH/4 * 3, y: 300)
+            button.setTitle("返回登录", for: .normal)
+            button.addTarget(self, action: #selector(segueToLoginButtonDidTouch), for: .touchUpInside)
+            button.setTitleColor(UIColor.black, for: .normal)
+        })
+        view.addSubview(segueToLoginButton)
     }
     
     func setupAlert(message: String) {
@@ -54,18 +69,23 @@ class RegisterViewController: UIViewController {
     }
     
     //MARK:event
-    func buttonDidTouch() {
+    func registerButtonDidTouch() {
         callRegisterUserAPI()
+    }
+    
+    func segueToLoginButtonDidTouch() {
+        let vc = navigationController?.popViewController(animated: true)
+        print(vc ?? "no vc")
     }
     
     //MARK:Network Layer
     func callRegisterUserAPI() -> Void {
         guard (accountTextfield.text?.characters.count)! > 0 else {
-            print("account is nil")
+            setupAlert(message: "account is nil")
             return
         }
         guard (passwordTextfield.text?.characters.count)! > 0 else {
-            print("password is nil")
+            setupAlert(message: "password is nil")
             return
         }
         
@@ -84,6 +104,7 @@ class RegisterViewController: UIViewController {
                     self.setupAlert(message: error)
                 }
             case let .failure(error):
+                self.setupAlert(message: "网络连接错误")
                 print(error)
             }
         }

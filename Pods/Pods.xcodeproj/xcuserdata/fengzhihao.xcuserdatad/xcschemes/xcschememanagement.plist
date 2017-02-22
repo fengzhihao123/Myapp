@@ -29,10 +29,20 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Then.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>1215771836B84E9F9899950098D2FF80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>147E48ADD20C178D7951B02B25C7E398</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,17 +52,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>5BE1EEB3C95F45A0B5062F9307039DBC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>613A550F862400EF6E7CDB466CAB85BB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E22EB3E28A344CC5E6C2371D03F1EB76</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FDBDAFE7CF982D4B82EE1EED32864E1E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

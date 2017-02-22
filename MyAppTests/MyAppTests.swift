@@ -24,11 +24,7 @@ class MyAppTests: XCTestCase {
     }
     
     func testMessageLabel() {
-        let _ = registerVC.view
-        registerVC.buttonDidTouch()
-        registerVC.accountTextfield.text = "13231852031"
-        XCTAssert(registerVC.accountTextfield.text?.characters.count == 11, "account length is wrong")
-        XCTAssert(registerVC.messageLabel.text == "message", "message label is wrong")
+        
     }
     
 }

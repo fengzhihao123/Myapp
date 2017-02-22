@@ -23,6 +23,7 @@
 		D683EA341E556C2100F51E08 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D683EA331E556C2100F51E08 /* LoginViewController.swift */; };
 		D692DA6D1E5B1D1100FCBCDF /* AMHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D692DA6C1E5B1D1100FCBCDF /* AMHeaderTableViewCell.swift */; };
 		D692DA701E5B230800FCBCDF /* CommonFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D692DA6F1E5B230800FCBCDF /* CommonFile.swift */; };
+		D6D682591E5D2270001AD7DD /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D682581E5D2270001AD7DD /* LoginTextField.swift */; };
 		D6EA977B1E5A917B005E3A8E /* CustomerRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EA977A1E5A917B005E3A8E /* CustomerRootViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		D683EA331E556C2100F51E08 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Login/Controller/LoginViewController.swift; sourceTree = "<group>"; };
 		D692DA6C1E5B1D1100FCBCDF /* AMHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AMHeaderTableViewCell.swift; path = AboutMe/View/AMHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		D692DA6F1E5B230800FCBCDF /* CommonFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonFile.swift; path = Category/CommonFile.swift; sourceTree = "<group>"; };
+		D6D682581E5D2270001AD7DD /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginTextField.swift; path = Category/LoginTextField.swift; sourceTree = "<group>"; };
 		D6EA977A1E5A917B005E3A8E /* CustomerRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerRootViewController.swift; path = Custom/Controller/CustomerRootViewController.swift; sourceTree = "<group>"; };
 		E41793EC66377A481395261A /* Pods_MyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -236,6 +238,7 @@
 			children = (
 				D692DA6F1E5B230800FCBCDF /* CommonFile.swift */,
 				D62B23801E5BDA100022B4BE /* ChooseRootVCHandle.swift */,
+				D6D682581E5D2270001AD7DD /* LoginTextField.swift */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				D683EA341E556C2100F51E08 /* LoginViewController.swift in Sources */,
 				D6EA977B1E5A917B005E3A8E /* CustomerRootViewController.swift in Sources */,
 				D62B23811E5BDA100022B4BE /* ChooseRootVCHandle.swift in Sources */,
+				D6D682591E5D2270001AD7DD /* LoginTextField.swift in Sources */,
 				D62B237F1E5BC8FA0022B4BE /* AMNormalTableViewCell.swift in Sources */,
 				D683EA321E556C1300F51E08 /* RegisterViewController.swift in Sources */,
 			);

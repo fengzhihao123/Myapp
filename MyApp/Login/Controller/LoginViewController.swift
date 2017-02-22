@@ -10,50 +10,56 @@ import UIKit
 import Alamofire
 import Moya
 import SwiftyJSON
+import Then
 class LoginViewController: UIViewController {
-
-    let accountTextfield = UITextField()
-    let passwordTextfield = UITextField()
-    let segueToRegisterButton = UIButton()
-    let loginButton = UIButton()
+    var accountTextfield = LoginTextField()
+    var passwordTextfield = LoginTextField()
+    var segueToRegisterButton = UIButton()
+    var loginButton = UIButton()
     let registerVC = RegisterViewController()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAttribute()
         setupUI()
-        self.navigationController?.navigationBar.isHidden = true
     }
     
+    //MARK:Attribute
     func setupAttribute() -> Void {
-        navigationItem.title = "login"
         view.backgroundColor = UIColor.white
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     //MARK:UI
     func setupUI() -> Void {
-        
-        accountTextfield.frame = CGRect(x: 100, y: 100, width: 300, height: 50)
-        accountTextfield.backgroundColor = UIColor.black
-        accountTextfield.textColor = UIColor.white
+        accountTextfield = LoginTextField().then({ (textField) in
+            textField.frame = CGRect(x: 0, y: 0, width: 300, height: 50)
+            textField.center = CGPoint(x: SCREEN_WIDTH/2, y: 150)
+        })
         view.addSubview(accountTextfield)
         
-        passwordTextfield.frame = CGRect(x: 100, y: 200, width: 300, height: 50)
-        passwordTextfield.backgroundColor = UIColor.black
-        passwordTextfield.textColor = UIColor.white
+        passwordTextfield = LoginTextField().then({ (textField) in
+            textField.frame = CGRect(x: 0, y: 0, width: 300, height: 50)
+            textField.center = CGPoint(x: SCREEN_WIDTH/2, y: 230)
+        })
         view.addSubview(passwordTextfield)
         
-        loginButton.frame = CGRect(x: 100, y: 280, width: 100, height: 50)
-        loginButton.setTitle("login", for: .normal)
-        loginButton.addTarget(self, action: #selector(loginButtonDidTouch), for: .touchUpInside)
-        loginButton.backgroundColor = UIColor.black
+        loginButton = UIButton().then({ (button) in
+            button.frame = CGRect(x: 0, y: 0, width: 100, height: 50)
+            button.center = CGPoint(x: SCREEN_WIDTH/4, y: 300)
+            button.setTitle("登录", for: .normal)
+            button.setTitleColor(UIColor.black, for: .normal)
+            button.addTarget(self, action: #selector(loginButtonDidTouch), for: .touchUpInside)
+        })
         view.addSubview(loginButton)
         
-        segueToRegisterButton.frame = CGRect(x: 280, y: 280, width: 100, height: 50)
-        segueToRegisterButton.setTitle("to register", for: .normal)
-        segueToRegisterButton.addTarget(self, action: #selector(segueButtonDidTouch), for: .touchUpInside)
-        segueToRegisterButton.backgroundColor = UIColor.black
+        segueToRegisterButton = UIButton().then({ (button) in
+            button.frame = CGRect(x: 0, y: 0, width: 100, height: 50)
+            button.center = CGPoint(x: SCREEN_WIDTH/4 * 3, y: 300)
+            button.setTitle("前往注册", for: .normal)
+            button.setTitleColor(UIColor.black, for: .normal)
+            button.addTarget(self, action: #selector(segueButtonDidTouch), for: .touchUpInside)
+        })
         view.addSubview(segueToRegisterButton)
     }
     
@@ -75,11 +81,11 @@ class LoginViewController: UIViewController {
     
     func callLoginAPI() {
         guard (accountTextfield.text?.characters.count)! > 0 else {
-            print("account is nil")
+            setupAlert(message: "account is nil")
             return
         }
         guard (passwordTextfield.text?.characters.count)! > 0 else {
-            print("password is nil")
+            setupAlert(message: "password is nil")
             return
         }
         
@@ -98,10 +104,10 @@ class LoginViewController: UIViewController {
                     self.setupAlert(message: error)
                 }
             case let .failure(error):
+                self.setupAlert(message: "网络连接错误")
                 print(error)
             }
         }
     }
-    
     
 }
