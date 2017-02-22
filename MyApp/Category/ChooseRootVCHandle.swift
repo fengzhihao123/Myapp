@@ -11,7 +11,7 @@ import UIKit
 
 
 let navigationControl = UINavigationController()
-let rootVC = ViewController()
+let rootVC = HomeRootViewController()
 let aboutmeVC = AboutMeRootViewController()
 let customerVC = CustomerRootViewController()
 let loginVC = LoginViewController()

@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import Alamofire
 import Moya
 import SwiftyJSON
-import Then
+
 class LoginViewController: UIViewController {
     var accountTextfield = LoginTextField()
     var passwordTextfield = LoginTextField()
@@ -33,12 +32,14 @@ class LoginViewController: UIViewController {
     //MARK:UI
     func setupUI() -> Void {
         accountTextfield = LoginTextField().then({ (textField) in
+            textField.accessibilityIdentifier = "account"
             textField.frame = CGRect(x: 0, y: 0, width: 300, height: 50)
             textField.center = CGPoint(x: SCREEN_WIDTH/2, y: 150)
         })
         view.addSubview(accountTextfield)
         
         passwordTextfield = LoginTextField().then({ (textField) in
+            textField.accessibilityIdentifier = "password"
             textField.frame = CGRect(x: 0, y: 0, width: 300, height: 50)
             textField.center = CGPoint(x: SCREEN_WIDTH/2, y: 230)
         })

@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Alamofire
+import Then
 
 // screen size
 let SCREEN_WIDTH = UIScreen.main.bounds.size.width

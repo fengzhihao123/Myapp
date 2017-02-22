@@ -12,7 +12,6 @@
 		D62B23811E5BDA100022B4BE /* ChooseRootVCHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B23801E5BDA100022B4BE /* ChooseRootVCHandle.swift */; };
 		D62B23861E5BECC80022B4BE /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62B23851E5BECC80022B4BE /* LoginAPI.swift */; };
 		D683E9FC1E5569FE00F51E08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D683E9FB1E5569FE00F51E08 /* AppDelegate.swift */; };
-		D683E9FE1E5569FE00F51E08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D683E9FD1E5569FE00F51E08 /* ViewController.swift */; };
 		D683EA011E5569FE00F51E08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D683E9FF1E5569FE00F51E08 /* Main.storyboard */; };
 		D683EA031E5569FE00F51E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D683EA021E5569FE00F51E08 /* Assets.xcassets */; };
 		D683EA061E5569FE00F51E08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D683EA041E5569FE00F51E08 /* LaunchScreen.storyboard */; };
@@ -24,6 +23,7 @@
 		D692DA6D1E5B1D1100FCBCDF /* AMHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D692DA6C1E5B1D1100FCBCDF /* AMHeaderTableViewCell.swift */; };
 		D692DA701E5B230800FCBCDF /* CommonFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D692DA6F1E5B230800FCBCDF /* CommonFile.swift */; };
 		D6D682591E5D2270001AD7DD /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D682581E5D2270001AD7DD /* LoginTextField.swift */; };
+		D6D6825D1E5D3434001AD7DD /* HomeRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D6825C1E5D3434001AD7DD /* HomeRootViewController.swift */; };
 		D6EA977B1E5A917B005E3A8E /* CustomerRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EA977A1E5A917B005E3A8E /* CustomerRootViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +52,6 @@
 		D62B23851E5BECC80022B4BE /* LoginAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginAPI.swift; path = Login/API/LoginAPI.swift; sourceTree = "<group>"; };
 		D683E9F81E5569FE00F51E08 /* MyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D683E9FB1E5569FE00F51E08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D683E9FD1E5569FE00F51E08 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D683EA001E5569FE00F51E08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D683EA021E5569FE00F51E08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D683EA051E5569FE00F51E08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -69,6 +68,7 @@
 		D692DA6C1E5B1D1100FCBCDF /* AMHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AMHeaderTableViewCell.swift; path = AboutMe/View/AMHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		D692DA6F1E5B230800FCBCDF /* CommonFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonFile.swift; path = Category/CommonFile.swift; sourceTree = "<group>"; };
 		D6D682581E5D2270001AD7DD /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginTextField.swift; path = Category/LoginTextField.swift; sourceTree = "<group>"; };
+		D6D6825C1E5D3434001AD7DD /* HomeRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeRootViewController.swift; path = Home/Controller/HomeRootViewController.swift; sourceTree = "<group>"; };
 		D6EA977A1E5A917B005E3A8E /* CustomerRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerRootViewController.swift; path = Custom/Controller/CustomerRootViewController.swift; sourceTree = "<group>"; };
 		E41793EC66377A481395261A /* Pods_MyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -149,12 +149,12 @@
 		D683E9FA1E5569FE00F51E08 /* MyApp */ = {
 			isa = PBXGroup;
 			children = (
+				D6D6825A1E5D3409001AD7DD /* Home */,
 				D692DA6E1E5B22E400FCBCDF /* Category */,
 				D6EA97761E5A913E005E3A8E /* Custom */,
 				D683EA2F1E556BE200F51E08 /* Login */,
 				D683EA291E556B1400F51E08 /* AboutMe */,
 				D683E9FB1E5569FE00F51E08 /* AppDelegate.swift */,
-				D683E9FD1E5569FE00F51E08 /* ViewController.swift */,
 				D683E9FF1E5569FE00F51E08 /* Main.storyboard */,
 				D683EA021E5569FE00F51E08 /* Assets.xcassets */,
 				D683EA041E5569FE00F51E08 /* LaunchScreen.storyboard */,
@@ -241,6 +241,22 @@
 				D6D682581E5D2270001AD7DD /* LoginTextField.swift */,
 			);
 			name = Category;
+			sourceTree = "<group>";
+		};
+		D6D6825A1E5D3409001AD7DD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D6D6825B1E5D3410001AD7DD /* Controller */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		D6D6825B1E5D3410001AD7DD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D6D6825C1E5D3434001AD7DD /* HomeRootViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		D6EA97761E5A913E005E3A8E /* Custom */ = {
@@ -465,10 +481,10 @@
 			files = (
 				D683EA2E1E556B6200F51E08 /* AboutMeRootViewController.swift in Sources */,
 				D62B23861E5BECC80022B4BE /* LoginAPI.swift in Sources */,
-				D683E9FE1E5569FE00F51E08 /* ViewController.swift in Sources */,
 				D683E9FC1E5569FE00F51E08 /* AppDelegate.swift in Sources */,
 				D692DA6D1E5B1D1100FCBCDF /* AMHeaderTableViewCell.swift in Sources */,
 				D692DA701E5B230800FCBCDF /* CommonFile.swift in Sources */,
+				D6D6825D1E5D3434001AD7DD /* HomeRootViewController.swift in Sources */,
 				D683EA341E556C2100F51E08 /* LoginViewController.swift in Sources */,
 				D6EA977B1E5A917B005E3A8E /* CustomerRootViewController.swift in Sources */,
 				D62B23811E5BDA100022B4BE /* ChooseRootVCHandle.swift in Sources */,

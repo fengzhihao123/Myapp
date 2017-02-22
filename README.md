@@ -7,6 +7,7 @@
 * [Super sweet syntactic sugar for Swift initializers](https://github.com/devxoul/Then)
 
 ### 参考教程
+* [UI testing](https://onevcat.com/2015/09/ui-testing/)
 
 ### 遇到的问题
 
