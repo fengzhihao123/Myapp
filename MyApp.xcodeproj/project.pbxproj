@@ -22,6 +22,12 @@
 		D683EA341E556C2100F51E08 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D683EA331E556C2100F51E08 /* LoginViewController.swift */; };
 		D692DA6D1E5B1D1100FCBCDF /* AMHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D692DA6C1E5B1D1100FCBCDF /* AMHeaderTableViewCell.swift */; };
 		D692DA701E5B230800FCBCDF /* CommonFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D692DA6F1E5B230800FCBCDF /* CommonFile.swift */; };
+		D6C0339F1E5FFA1700AF0D00 /* HomeWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C0339E1E5FFA1700AF0D00 /* HomeWriteViewController.swift */; };
+		D6C033A11E60133000AF0D00 /* AMPersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C033A01E60133000AF0D00 /* AMPersonalViewController.swift */; };
+		D6C033A61E6018EC00AF0D00 /* FZHTabbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C033A51E6018EC00AF0D00 /* FZHTabbarButton.swift */; };
+		D6C033A81E60190E00AF0D00 /* FZHTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C033A71E60190E00AF0D00 /* FZHTabBar.swift */; };
+		D6C033AA1E60193F00AF0D00 /* FZHTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C033A91E60193F00AF0D00 /* FZHTabbarViewController.swift */; };
+		D6C033AC1E60197C00AF0D00 /* FZHNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C033AB1E60197C00AF0D00 /* FZHNavigationController.swift */; };
 		D6D682591E5D2270001AD7DD /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D682581E5D2270001AD7DD /* LoginTextField.swift */; };
 		D6D6825D1E5D3434001AD7DD /* HomeRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D6825C1E5D3434001AD7DD /* HomeRootViewController.swift */; };
 		D6EA977B1E5A917B005E3A8E /* CustomerRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EA977A1E5A917B005E3A8E /* CustomerRootViewController.swift */; };
@@ -67,6 +73,12 @@
 		D683EA331E556C2100F51E08 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Login/Controller/LoginViewController.swift; sourceTree = "<group>"; };
 		D692DA6C1E5B1D1100FCBCDF /* AMHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AMHeaderTableViewCell.swift; path = AboutMe/View/AMHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		D692DA6F1E5B230800FCBCDF /* CommonFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonFile.swift; path = Category/CommonFile.swift; sourceTree = "<group>"; };
+		D6C0339E1E5FFA1700AF0D00 /* HomeWriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeWriteViewController.swift; path = Home/Controller/HomeWriteViewController.swift; sourceTree = "<group>"; };
+		D6C033A01E60133000AF0D00 /* AMPersonalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AMPersonalViewController.swift; path = AboutMe/Controller/AMPersonalViewController.swift; sourceTree = "<group>"; };
+		D6C033A51E6018EC00AF0D00 /* FZHTabbarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FZHTabbarButton.swift; path = Base/View/FZHTabbarButton.swift; sourceTree = "<group>"; };
+		D6C033A71E60190E00AF0D00 /* FZHTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FZHTabBar.swift; path = Base/View/FZHTabBar.swift; sourceTree = "<group>"; };
+		D6C033A91E60193F00AF0D00 /* FZHTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FZHTabbarViewController.swift; path = Base/Controller/FZHTabbarViewController.swift; sourceTree = "<group>"; };
+		D6C033AB1E60197C00AF0D00 /* FZHNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FZHNavigationController.swift; path = Base/Controller/FZHNavigationController.swift; sourceTree = "<group>"; };
 		D6D682581E5D2270001AD7DD /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginTextField.swift; path = Category/LoginTextField.swift; sourceTree = "<group>"; };
 		D6D6825C1E5D3434001AD7DD /* HomeRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeRootViewController.swift; path = Home/Controller/HomeRootViewController.swift; sourceTree = "<group>"; };
 		D6EA977A1E5A917B005E3A8E /* CustomerRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerRootViewController.swift; path = Custom/Controller/CustomerRootViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +161,7 @@
 		D683E9FA1E5569FE00F51E08 /* MyApp */ = {
 			isa = PBXGroup;
 			children = (
+				D6C033A21E60187E00AF0D00 /* Base */,
 				D6D6825A1E5D3409001AD7DD /* Home */,
 				D692DA6E1E5B22E400FCBCDF /* Category */,
 				D6EA97761E5A913E005E3A8E /* Custom */,
@@ -195,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				D683EA2D1E556B6200F51E08 /* AboutMeRootViewController.swift */,
+				D6C033A01E60133000AF0D00 /* AMPersonalViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -243,6 +257,33 @@
 			name = Category;
 			sourceTree = "<group>";
 		};
+		D6C033A21E60187E00AF0D00 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D6C033A41E6018B400AF0D00 /* View */,
+				D6C033A31E6018AB00AF0D00 /* Controller */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		D6C033A31E6018AB00AF0D00 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D6C033A91E60193F00AF0D00 /* FZHTabbarViewController.swift */,
+				D6C033AB1E60197C00AF0D00 /* FZHNavigationController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		D6C033A41E6018B400AF0D00 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D6C033A51E6018EC00AF0D00 /* FZHTabbarButton.swift */,
+				D6C033A71E60190E00AF0D00 /* FZHTabBar.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		D6D6825A1E5D3409001AD7DD /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				D6D6825C1E5D3434001AD7DD /* HomeRootViewController.swift */,
+				D6C0339E1E5FFA1700AF0D00 /* HomeWriteViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -479,17 +521,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6C033AC1E60197C00AF0D00 /* FZHNavigationController.swift in Sources */,
 				D683EA2E1E556B6200F51E08 /* AboutMeRootViewController.swift in Sources */,
 				D62B23861E5BECC80022B4BE /* LoginAPI.swift in Sources */,
 				D683E9FC1E5569FE00F51E08 /* AppDelegate.swift in Sources */,
 				D692DA6D1E5B1D1100FCBCDF /* AMHeaderTableViewCell.swift in Sources */,
 				D692DA701E5B230800FCBCDF /* CommonFile.swift in Sources */,
+				D6C0339F1E5FFA1700AF0D00 /* HomeWriteViewController.swift in Sources */,
 				D6D6825D1E5D3434001AD7DD /* HomeRootViewController.swift in Sources */,
 				D683EA341E556C2100F51E08 /* LoginViewController.swift in Sources */,
+				D6C033A61E6018EC00AF0D00 /* FZHTabbarButton.swift in Sources */,
 				D6EA977B1E5A917B005E3A8E /* CustomerRootViewController.swift in Sources */,
 				D62B23811E5BDA100022B4BE /* ChooseRootVCHandle.swift in Sources */,
 				D6D682591E5D2270001AD7DD /* LoginTextField.swift in Sources */,
+				D6C033AA1E60193F00AF0D00 /* FZHTabbarViewController.swift in Sources */,
 				D62B237F1E5BC8FA0022B4BE /* AMNormalTableViewCell.swift in Sources */,
+				D6C033A11E60133000AF0D00 /* AMPersonalViewController.swift in Sources */,
+				D6C033A81E60190E00AF0D00 /* FZHTabBar.swift in Sources */,
 				D683EA321E556C1300F51E08 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,7 @@ import UIKit
 class AboutMeRootViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     var tableView = UITableView()
-    let titleArray = ["个人中心","我的钱包","小斑马货栈费用报价","会员特权","联系我们","设置"]
+    let titleArray = ["123","234","456","567","789","901"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,9 +65,8 @@ class AboutMeRootViewController: UIViewController,UITableViewDelegate,UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 5 {
-            UserDefaults.standard.removeObject(forKey: "UserToken")
-            chooseRootVC()
+        if indexPath.section == 0 {
+            navigationController?.pushViewController(AMPersonalViewController(), animated: true)
         }
     }
 }

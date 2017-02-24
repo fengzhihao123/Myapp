@@ -33,6 +33,7 @@ class LoginViewController: UIViewController {
     func setupUI() -> Void {
         accountTextfield = LoginTextField().then({ (textField) in
             textField.accessibilityIdentifier = "account"
+            textField.placeholder = "手机号"
             textField.frame = CGRect(x: 0, y: 0, width: 300, height: 50)
             textField.center = CGPoint(x: SCREEN_WIDTH/2, y: 150)
         })
@@ -40,6 +41,7 @@ class LoginViewController: UIViewController {
         
         passwordTextfield = LoginTextField().then({ (textField) in
             textField.accessibilityIdentifier = "password"
+            textField.placeholder = "密码"
             textField.frame = CGRect(x: 0, y: 0, width: 300, height: 50)
             textField.center = CGPoint(x: SCREEN_WIDTH/2, y: 230)
         })
